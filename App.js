@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
-// import { TextInput } from 'react-native-web';
+import { StyleSheet, Text, View, TextInput, Image } from 'react-native';
 
 export default function App() {
   const [text, setText] = useState('')
@@ -15,6 +14,7 @@ export default function App() {
         <Text style={{padding: 5, fontSize: 42}}>
         {text.split(' ').map((word) => word && '🍕').join(' ')}
       </Text>
+      <Image source={require("./hello.jpeg")} style={styles.img}/>
       <StatusBar style="auto" />
     </View>
   );
@@ -38,5 +38,9 @@ const styles = StyleSheet.create({
     borderRightWidth: 1,
     paddingLeft: 10,
     fontSize: 15
+  },
+  img: {
+    width: 200,
+    height: 130
   }
 });
